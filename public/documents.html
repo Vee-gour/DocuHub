@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuHub | Documents</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="/"><span class="brand-mark">D</span><span>DocuHub</span></a>
+        <button class="nav-toggle" id="nav-toggle">Menu</button>
+        <nav class="nav-menu" id="nav-menu">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/documents.html">Documents</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <a class="nav-link" href="/contact.html">Contact</a>
+          <a class="nav-link" href="/merch.html">Merch</a>
+          <a class="nav-link" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+    <main class="container">
+      <section class="hero" style="padding-bottom: 1rem;">
+        <h1>Document Library</h1>
+        <p>Search, filter, and browse PDF files by category.</p>
+      </section>
+
+      <form class="toolbar" id="searchForm">
+        <input id="searchInput" type="text" placeholder="Search by title..." />
+        <select id="categoryFilter"></select>
+        <button class="btn btn-primary" type="submit">Search</button>
+      </form>
+
+      <section id="document-list"></section>
+      <div class="pagination" id="pagination"></div>
+    </main>
+
+    <footer class="site-footer"><div class="container"><small>DocuHub</small></div></footer>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/documents.js"></script>
+  </body>
+</html>

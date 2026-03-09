@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuHub | Admin</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="/"><span class="brand-mark">D</span><span>DocuHub</span></a>
+        <button class="nav-toggle" id="nav-toggle">Menu</button>
+        <nav class="nav-menu" id="nav-menu">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/documents.html">Documents</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <a class="nav-link" href="/contact.html">Contact</a>
+          <a class="nav-link" href="/merch.html">Merch</a>
+          <a class="nav-link" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" style="padding-bottom: 1rem;">
+        <h1>Admin Dashboard</h1>
+        <p>Authenticate to manage categories and PDF documents.</p>
+      </section>
+
+      <section id="authMessage"></section>
+      <section class="card" id="loginPanel">
+        <h3>Admin Login</h3>
+        <form id="loginForm">
+          <div class="field">
+            <label for="username">Username</label>
+            <input id="username" type="text" required />
+          </div>
+          <div class="field">
+            <label for="password">Password</label>
+            <input id="password" type="password" required />
+          </div>
+          <button class="btn btn-primary" type="submit">Sign In</button>
+        </form>
+      </section>
+
+      <section class="split" id="adminPanel" style="display:none;">
+        <article class="card">
+          <div style="display:flex;justify-content:space-between;gap:0.6rem;align-items:center;">
+            <h3 style="margin:0;">Category Management</h3>
+            <button class="btn btn-ghost" id="logoutBtn" type="button">Logout</button>
+          </div>
+          <form id="categoryForm">
+            <div class="field">
+              <label for="newCategoryName">Name</label>
+              <input id="newCategoryName" required />
+            </div>
+            <div class="field">
+              <label for="newCategoryDescription">Description</label>
+              <textarea id="newCategoryDescription" rows="2"></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Add Category</button>
+          </form>
+          <div id="categoryMessage"></div>
+          <div id="categoryManageList"></div>
+        </article>
+
+        <article class="card">
+          <h3>Document Upload / Edit</h3>
+          <form id="documentForm">
+            <input type="hidden" id="documentId" name="documentId" />
+            <div class="field">
+              <label for="title">Title</label>
+              <input id="title" name="title" required />
+            </div>
+            <div class="field">
+              <label for="description">Description</label>
+              <textarea id="description" name="description" rows="2"></textarea>
+            </div>
+            <div class="field">
+              <label for="categoryId">Category</label>
+              <select id="categoryId" name="categoryId" required></select>
+            </div>
+            <div class="field">
+              <label for="pdf">PDF File</label>
+              <input id="pdf" name="pdf" type="file" accept="application/pdf" />
+            </div>
+            <div class="field">
+              <label for="externalUrl">Or external PDF URL</label>
+              <input id="externalUrl" name="externalUrl" type="url" />
+            </div>
+            <div class="field">
+              <input name="convertToHtml" type="hidden" value="false" />
+              <label><input id="convertToHtml" name="convertToHtml" type="checkbox" value="true" /> Convert PDF text to HTML view</label>
+            </div>
+            <button class="btn btn-primary" type="submit">Save Document</button>
+          </form>
+          <div id="documentMessage"></div>
+          <h3>Existing Documents</h3>
+          <div id="adminDocumentList"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><small>DocuHub Admin</small></div></footer>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/admin.js"></script>
+  </body>
+</html>

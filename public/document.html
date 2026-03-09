@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DocuHub | Document Viewer</title>
+    <link rel="stylesheet" href="/css/styles.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-row">
+        <a class="brand" href="/"><span class="brand-mark">D</span><span>DocuHub</span></a>
+        <button class="nav-toggle" id="nav-toggle">Menu</button>
+        <nav class="nav-menu" id="nav-menu">
+          <a class="nav-link" href="/">Home</a>
+          <a class="nav-link" href="/documents.html">Documents</a>
+          <a class="nav-link" href="/about.html">About</a>
+          <a class="nav-link" href="/contact.html">Contact</a>
+          <a class="nav-link" href="/merch.html">Merch</a>
+          <a class="nav-link" href="/admin.html">Admin</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero" style="padding-bottom:1rem;">
+        <h1 id="docTitle">Loading...</h1>
+        <p id="docMeta"></p>
+        <a class="btn btn-primary" id="downloadLink" href="#" target="_blank" rel="noopener noreferrer">Download PDF</a>
+      </section>
+
+      <section class="split">
+        <article class="card" id="pdfViewer">
+          <div class="pdf-controls">
+            <button class="btn btn-ghost" id="prevPage">Prev</button>
+            <span id="pageInfo">Page 1</span>
+            <button class="btn btn-ghost" id="nextPage">Next</button>
+          </div>
+          <canvas id="pdf-canvas"></canvas>
+        </article>
+
+        <article class="card">
+          <h3>HTML View</h3>
+          <div id="htmlView" class="muted"></div>
+        </article>
+      </section>
+    </main>
+
+    <footer class="site-footer"><div class="container"><small>DocuHub</small></div></footer>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.8.69/pdf.min.js"></script>
+    <script src="/js/api.js"></script>
+    <script src="/js/main.js"></script>
+    <script src="/js/document.js"></script>
+  </body>
+</html>
